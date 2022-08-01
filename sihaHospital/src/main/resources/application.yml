@@ -1,0 +1,52 @@
+logging:
+  level:
+    org:
+      hibernate: ERROR
+      springframework:
+        web: DEBUG
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Choti@2403
+    tomcat:
+      max-active: 5
+      max-wait: 10000
+      test-on-borrow: true
+    url: jdbc:mysql://localhost:3306/hms
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    password: eefzvagnghjpqrol
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: rajkamalr198@gmail.com
+  thymeleaf:
+    mode: LEGACYHTML5
+
+    spring:
+  security:
+    oauth2:
+      client:
+        registration:
+         google:
+          clientId: 36797734733-p3n26takj1j6vq8ongt302070c3k4ht2.apps.googleusercontent.com
+          clientSecret: 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
+          scope:
+           - email
+           - profile
+                    
+         facebook:
+          clientId: 565701238624633
+          clientSecret: 73a06698e3561281e921622337e435b1
+          scope:
+           - email
+           - public_profile

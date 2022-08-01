@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="login/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+	integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="login/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="login/css/util.css">
+<link rel="stylesheet" type="text/css" href="login/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="container-center w-full p-t-100 p-l-100 p-r-50">
+		<div class="container">
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-50 p-b-30">
+				<form class="login100-form validate-form"
+					th:action="@{/authenticateTheUser}" method="POST">
+
+					<span class="login100-form-title p-b-55"> SIHA Hospital</span>
+
+					<div class="wrap-input100 validate-input m-b-16"
+						data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="username"
+							placeholder="Email"> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <span
+							class="lnr lnr-envelope"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16"
+						data-validate="Password is required">
+						<input class="input100" type="password" name="password"
+							placeholder="Password"> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <span class="lnr lnr-lock"></span>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn p-t-25">
+						<button class="login100-form-btn">Login</button>
+					</div>
+
+
+					<div th:if="${param.error != null}"
+						class="text-center w-full p-t-22 p-b-22">
+						<span class="alart" style="color: red"> Wrong password /
+							username </span>
+					</div>
+
+					<div th:if="${param.logout != null}"
+						class="text-center w-full p-t-22 p-b-11">
+						<span class="alart" style="color: red"> You have logout
+							successfully !!!! </span>
+					</div>
+					<div class="text-center w-full p-t-11 p-b-22">
+						<span class="txt1"> Or login with </span>
+					</div>
+
+					<div class="text-center w-full p-t-11 p-b-22">
+
+						<a th:href="@{/oauth2/authorization/google}"><i
+							class="fa-brands fa-google" style="color:red"></i>&nbsp;Google</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;<a
+							th:href="@{/oauth2/authorization/facebook}"><i
+							class="fa-brands fa-facebook-square" style="color:blue"></i>&nbsp;Facebook</a>
+
+					</div>
+					
+
+					<div class="text-center w-full p-t-10 p-b-50%">
+						<span class="txt1"> Not a member? </span> <a class="txt1 bo1 hov1"
+							th:href="@{/register}"> Sign up now </a>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--===============================================================================================-->
+	<script src="login/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="login/vendor/bootstrap/js/popper.js"></script>
+	<script src="login/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="login/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="login/js/main.js"></script>
+</body>
+</html>
